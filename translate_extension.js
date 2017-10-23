@@ -135,7 +135,7 @@
     menus: {
       lang: []
     },
-      url: 'http://github.com/khanning/scratch-translation-block'
+      url: 'https://edutev.github.io/translate_extension/'
   };
   
   $.ajax({
