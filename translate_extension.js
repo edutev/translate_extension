@@ -1,4 +1,10 @@
-
+/********************************************************
+ * translate_extension.js - Scratch Translation Block   *
+ *                                                      *
+ * Author: Kreg Hanning, 2014                           *
+ *                                                      *
+ * Powered by the yandex.com translation api            *
+ ********************************************************/
 
 ( function( ext ) {
 
@@ -129,10 +135,9 @@
     menus: {
       lang: []
     },
-      url: 'https://edutev.github.io/translate_extension/'
+      url: 'http://github.com/khanning/scratch-translation-block'
   };
-   // Register the extension
-    ScratchExtensions.register('traductor', descriptor, ext);
+  
   $.ajax({
     url: 'http://khanning.com/getlang',
     dataType: 'jsonp',
