@@ -120,8 +120,8 @@
   
   var descriptor = {
     blocks: [
-      [ 'R', 'translate %s from %m.lang to %m.lang', 'translate', 'Hello', 'English', 'Spanish' ],
-      [ 'R', 'translate %s from %m.lang to default language', 'translateDefault', 'Hello', 'English' ],
+      [ 'r', 'translate %s from %m.lang to %m.lang', 'translate', 'Hello', 'English', 'Spanish' ],
+      [ 'r', 'translate %s from %m.lang to default language', 'translateDefault', 'Hello', 'English' ],
       [ ' ', 'set default language to %m.lang', 'setDefaultLang', 'English' ],
       [ 'r', 'default language', 'getDefaultLang' ]
     ],
@@ -131,19 +131,6 @@
       url: 'https://edutev.github.io/translate_extension/'
   };
   
-  $.ajax({
-    url: 'http://khanning.com/getlang',
-    dataType: 'jsonp',
-    success: function( lang ) {
-      defaultLang = lang;
-    },
-    error: function() {
-      console.log( "Unable to get default language" );
-      defaultLang = null;
-    },
-    complete: function() {
-      getYandexLanguages();
-    }
-  });
+
 
 } )( {} );
