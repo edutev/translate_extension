@@ -1,10 +1,4 @@
-/********************************************************
- * translate_extension.js - Scratch Translation Block   *
- *                                                      *
- * Author: Kreg Hanning, 2014                           *
- *                                                      *
- * Powered by the yandex.com translation api            *
- ********************************************************/
+
 
 ( function( ext ) {
 
