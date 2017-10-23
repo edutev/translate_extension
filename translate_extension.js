@@ -137,7 +137,8 @@
     },
       url: 'https://edutev.github.io/translate_extension/'
   };
-  
+   // Register the extension
+    ScratchExtensions.register('traductor', descriptor, ext);
   $.ajax({
     url: 'http://khanning.com/getlang',
     dataType: 'jsonp',
