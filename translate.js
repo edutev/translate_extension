@@ -144,7 +144,7 @@
     menus: {
       lang: []
     },
-      url: 'http://github.com/khanning/scratch-translation-block'
+      url: 'https://github.com/edutev/translate_extension'
   };
   
  
