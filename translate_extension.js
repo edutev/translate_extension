@@ -3,7 +3,7 @@
 ( function( ext ) {
 
   var
-  API_KEY = '',    // Get API key from http://api.yandex.com/translate/
+  API_KEY = 'trnsl.1.1.20171024T144620Z.0ab0e4a70d925560.a2b9514f36f1b2c2bbb18c99113b06c9d986b41b',    // Get API key from http://api.yandex.com/translate/
   lastQuery = {},
   supportedLanguages = {},
   connection = {
