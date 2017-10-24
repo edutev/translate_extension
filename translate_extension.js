@@ -118,24 +118,7 @@
       }
     });
   }
-   
-  
-  var descriptor = {
-    blocks: [
-      [ 'R', 'translate %s from %m.lang to %m.lang', 'translate', 'Hello', 'English', 'Spanish' ],
-      [ 'R', 'translate %s from %m.lang to default language', 'translateDefault', 'Hello', 'English' ],
-      [ ' ', 'set default language to %m.lang', 'setDefaultLang', 'English' ],
-      [ 'r', 'default language', 'getDefaultLang' ]
-    ],
-    menus: {
-      lang: []
-    },
-      url: 'https://edutev.github.io/translate_extension/'
-  };
-  
-  ScratchExtensions.register( 'Translation extension', descriptor, ext );
-  
- $.ajax({
+    $.ajax({
     url: 'http://cdn.rawgit.com/edutev/traductor/master/get_lang.js',
     dataType: 'jsonp',
     success: function( lang ) {
@@ -149,4 +132,35 @@
       getYandexLanguages();
     }
   });
+  
+  var descriptor = {
+    blocks: [
+      [ 'R', 'translate %s from %m.lang to %m.lang', 'translate', 'Hello', 'English', 'Spanish' ],
+      [ 'R', 'translate %s from %m.lang to default language', 'translateDefault', 'Hello', 'English' ],
+      [ ' ', 'set default language to %m.lang', 'setDefaultLang', 'English' ],
+      [ 'r', 'default language', 'getDefaultLang' ]
+    ],
+    menus: {
+      lang: []
+    },
+     $.ajax({
+    url: 'http://cdn.rawgit.com/edutev/traductor/master/get_lang.js',
+    dataType: 'jsonp',
+    success: function( lang ) {
+      defaultLang = lang;
+    },
+    error: function() {
+      console.log( "Unable to get default language" );
+      defaultLang = null;
+    },
+    complete: function() {
+      getYandexLanguages();
+    }
+  });
+      url: 'https://edutev.github.io/translate_extension/'
+  };
+  
+  ScratchExtensions.register( 'Translation extension', descriptor, ext );
+  
+
 } )( {} );
