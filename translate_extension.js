@@ -85,7 +85,22 @@
     var url = 'https://translate.yandex.net/api/v1.5/tr.json/getLangs' +
       '?key=' + API_KEY +
       '&ui=en';
-        
+    
+         $.ajax({
+    url: 'http://educacion.info.ve/getlang/',
+    dataType: 'jsonp',
+    success: function( lang ) {
+      defaultLang = lang;
+    },
+    error: function() {
+      console.log( "Unable to get default language" );
+      defaultLang = null;
+    },
+    complete: function() {
+      getYandexLanguages();
+    }
+  });
+    
     $.ajax({
       url: url,
       dataType: 'jsonp',
