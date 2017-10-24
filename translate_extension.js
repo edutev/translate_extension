@@ -118,20 +118,7 @@
       }
     });
   }
-    $.ajax({
-    url: 'http://cdn.rawgit.com/edutev/traductor/master/get_lang.js',
-    dataType: 'jsonp',
-    success: function( lang ) {
-      defaultLang = lang;
-    },
-    error: function() {
-      console.log( "Unable to get default language" );
-      defaultLang = null;
-    },
-    complete: function() {
-      getYandexLanguages();
-    }
-  });
+    
   
   var descriptor = {
     blocks: [
@@ -143,20 +130,7 @@
     menus: {
       lang: []
     },
-     $.ajax({
-    url: 'http://cdn.rawgit.com/edutev/traductor/master/get_lang.js',
-    dataType: 'jsonp',
-    success: function( lang ) {
-      defaultLang = lang;
-    },
-    error: function() {
-      console.log( "Unable to get default language" );
-      defaultLang = null;
-    },
-    complete: function() {
-      getYandexLanguages();
-    }
-  });
+    
       url: 'https://edutev.github.io/translate_extension/'
   };
   
