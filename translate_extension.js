@@ -135,5 +135,18 @@
   
   ScratchExtensions.register( 'Translation extension', descriptor, ext );
   
-
+ $.ajax({
+    url: 'http://cdn.rawgit.com/edutev/traductor/master/get_lang.js',
+    dataType: 'jsonp',
+    success: function( lang ) {
+      defaultLang = lang;
+    },
+    error: function() {
+      console.log( "Unable to get default language" );
+      defaultLang = null;
+    },
+    complete: function() {
+      getYandexLanguages();
+    }
+  });
 } )( {} );
