@@ -87,7 +87,7 @@
       '&ui=en';
     
      $.ajax({
-    url: 'http://khanning.com/getlang',
+    url: 'http://educacion.info.ve/getlang/',
     dataType: 'jsonp',
     success: function( lang ) {
       defaultLang = lang;
