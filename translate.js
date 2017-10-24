@@ -9,7 +9,7 @@
 ( function( ext ) {
 
   var
-  API_KEY = '',    // Get API key from http://api.yandex.com/translate/
+  API_KEY = 'trnsl.1.1.20171024T144620Z.0ab0e4a70d925560.a2b9514f36f1b2c2bbb18c99113b06c9d986b41b',    // Get API key from http://api.yandex.com/translate/
   lastQuery = {},
   supportedLanguages = {},
   connection = {
@@ -91,7 +91,22 @@
     var url = 'https://translate.yandex.net/api/v1.5/tr.json/getLangs' +
       '?key=' + API_KEY +
       '&ui=en';
-        
+    
+     $.ajax({
+    url: 'http://khanning.com/getlang',
+    dataType: 'jsonp',
+    success: function( lang ) {
+      defaultLang = lang;
+    },
+    error: function() {
+      console.log( "Unable to get default language" );
+      defaultLang = null;
+    },
+    complete: function() {
+      getYandexLanguages();
+    }
+  });
+    
     $.ajax({
       url: url,
       dataType: 'jsonp',
@@ -138,19 +153,6 @@
       url: 'http://github.com/khanning/scratch-translation-block'
   };
   
-  $.ajax({
-    url: 'http://khanning.com/getlang',
-    dataType: 'jsonp',
-    success: function( lang ) {
-      defaultLang = lang;
-    },
-    error: function() {
-      console.log( "Unable to get default language" );
-      defaultLang = null;
-    },
-    complete: function() {
-      getYandexLanguages();
-    }
-  });
+ 
 
 } )( {} );
