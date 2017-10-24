@@ -129,7 +129,7 @@
     menus: {
       lang: []
     },
-      url: 'hhttps://edutev.github.io/translate_extension/'
+      url: 'https://edutev.github.io/translate_extension/'
   };
   
   ScratchExtensions.register( 'Translation extension', descriptor, ext );
